@@ -1,0 +1,65 @@
+<div class="home-bg"></div>
+<header class="container-fluid">
+  <app-menu></app-menu>
+</header>
+<section class="section-home">
+  <div class="container-fluid">
+    <div class="highlight">
+      <span class="highlight__crown"></span>
+      <h1 class="highlight__title">
+        Welcome to <strong class="highlight__title-featured">Charlotte</strong> the queen city
+      </h1>
+    </div>
+    <div class="search-box">
+      <h2 class="search-box__title"></h2>
+      <div class="col-sm-12 col-md-6">
+        <div class="search-box__dates">
+          <div class="selected-date">
+            <div class="label">CHECK-IN</div>
+            <div class="value">Choose a date</div>
+          </div>
+          <div class="selected-date">
+            <div class="label">CHECK-OUT</div>
+            <div class="value">Choose a date</div>
+          </div>
+        </div>
+        <button class="btn btn-outline-primary">Search hotels</button>
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <div class="search-box__pickdate">
+          <ngb-datepicker #dp (select)="onDateSelection($event)" [displayMonths]="1" [dayTemplate]="t">
+          </ngb-datepicker>
+          
+          <ng-template #t let-date="date" let-focused="focused">
+            <span class="custom-day"
+                  [class.focused]="focused"
+                  [class.range]="isFrom(date) || isTo(date) || isInside(date) || isHovered(date)"
+                  [class.faded]="isHovered(date) || isInside(date)"
+                  (mouseenter)="hoveredDate = date"
+                  (mouseleave)="hoveredDate = null">
+              {{ date.day }}
+            </span>
+          </ng-template>
+          
+          <hr>
+          
+          <pre>From: {{ fromDate | json }} </pre>
+          <pre>To: {{ toDate | json }} </pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <router-outlet></router-outlet>
+</section>
+
+<footer>
+  <div class="social-links">
+    <a href="" class="social-link social-link__facebook"></a>
+    <a href="" class="social-link social-link__twitter"></a>
+    <a href="" class="social-link social-link__instagram"></a>
+  </div>
+  <p>© 2004-2017 Visit Charlotte. All Rights Reserved. 500 S. College Street, Suite 300, Charlotte, NC 28202</p>
+</footer>

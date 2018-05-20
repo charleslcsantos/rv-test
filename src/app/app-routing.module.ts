@@ -4,8 +4,8 @@ import { AppComponent } from './app.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: AppComponent
+    path: 'search',
+    loadChildren: './search-result/search-result.module#SearchResultModule'
   },
   {
     path: '**',

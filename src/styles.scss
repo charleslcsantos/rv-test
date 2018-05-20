@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Heebo|Montserrat');
+
+@import "assets/scss/bootstrap/bootstrap";
+@import "assets/scss/variables";
+@import "assets/scss/mixins/responsive";
+
+html {
+	@include min-desktop-size {
+		font-size: 1.2em;
+	}
+	@include max-tablet-size {
+		font-size: 1.15em;
+	}
+	@include max-mobile-size {
+		font-size: 1em;
+	}
+}
