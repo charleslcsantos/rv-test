@@ -4,7 +4,7 @@ import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { HotelService } from '../services/hotel/hotel.service';
 import { HotelModel, FilterHotelModel } from '../Models/HotelModel';
 import { Observable } from 'rxjs';
-import { LoaderService } from '../services/Loader/loader.service';
+import { LoaderService } from '../services/loader/loader.service';
 import { DatesModel } from '../Models/DatesModel';
 
 @Component({
