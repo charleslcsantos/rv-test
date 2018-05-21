@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <h2 class="search-result__title">Best choices between {{fromDate | date:'MMM dd, yyyy'}} and {{toDate | date:'MMM dd, yyyy'}}</h2>
     <div class="row">
-      <div class="search-result__sidebar col-md-3">
+      <div class="search-result__sidebar col-xs-12 col-md-3 col-lg-3">
         <div class="sidebar__filters">
           <p class="sidebar__title">Filters</p>
           <div class="filter filter__price-range">
@@ -25,7 +25,7 @@
           </div>
         </div>
       </div>
-      <div class="search-result__list col-sm-12 col-md-9">
+      <div class="search-result__list col-sm-12 col-md-9 col-lg-9">
         <a href="javascript:;" class="result-list__item" *ngFor="let hotel of hotels">
           <div class="card-hotel">
             <div class="hotel-detail">
@@ -46,11 +46,14 @@
                   <p class="price__label">Total<strong> {{ (totalNights | async) }} {{ (totalNights | async) > 1 ? 'nights' : 'night' }}</strong></p>
                   <p class="price__value">$ {{ (hotel.price * (totalNights | async)) }}</p>
                 </div>
+                <div class="price price_night">
+                  <p class="price__label">Per night</p>
+                  <p class="price__value">$ {{ hotel.price }}</p>
+                </div>
               </div>
             </div>
             <div class="hotel-price-history">
-              <p class="price__label">Per night</p>
-              <p class="price__value">$ {{ hotel.price }}</p>
+              
             </div>
           </div>
         </a>

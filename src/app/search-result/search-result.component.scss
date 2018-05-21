@@ -75,6 +75,8 @@
 .range {
   color: $color_orange;
   font-weight: 700;
+  width: 50%;
+  display: inline-block;
   &:before {
     display: block;
     font-size: .8em;
@@ -89,7 +91,7 @@
 }
 
 .range__to {
-  float: right;
+  text-align: right;
   &:before {
     content: 'Max';
   }
@@ -105,7 +107,9 @@
   font-weight: 500;
   font-family: $primary_font;
   letter-spacing: 2px;
-
+  @include min-desktop-size {
+    margin-bottom: 50px;
+  }
 }
 
 .filter__stars {
@@ -115,6 +119,14 @@
 .result-list__item {
   color: #B5B5B5;
   line-height: 1.6em;
+  &:hover {
+    color: #B5B5B5;
+    @include min-desktop-size {
+      .hotel-detail__pic {
+        left: -30px;
+      }
+    }
+  }
 }
 
 .card-hotel {
@@ -125,11 +137,33 @@
   overflow: hidden;
   margin-bottom: 30px;
   padding-bottom: 20px;
+  @include min-desktop-size {
+    text-align: left;
+    position: relative;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.17);
+    border-radius: 5px;
+    overflow: initial;
+    height: 270px;
+    width: 90%;
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .hotel-detail__pic {
   width: 100%;
   max-height: 280px;
+  transition: all ease .2s;
+  @include min-desktop-size {
+    width: 200px;
+    position: absolute;
+    left: -40px;
+    top: 30px;
+    box-shadow: 0 0 20px 0 #949494;
+    border-radius: 5px;
+  }
 }
 
 .hotel-detail__title {
@@ -138,15 +172,51 @@
   font-weight: 900;
   margin-bottom: 15px;
   font-size: 1.3em;
+  @include min-desktop-size {
+    font-size: .9em;
+    text-transform: uppercase;
+    line-height: 1.4em;
+    margin-bottom: 5px;
+  }
+}
+
+.hotel-detail__description {
+  color: #B5B5B5;
+  @include min-desktop-size {
+    font-size: .72em;
+    line-height: 1.5em;
+  }
 }
 
 .hotel-detail__main {
   padding: 20px 15px;
+  @include min-desktop-size {
+    width: 70%;
+    display: inline-block;
+    padding-left: 200px;
+    vertical-align: middle;
+  }
+}
+
+.hotel-detail__prices {
+  @include min-desktop-size {
+    width: 28%;
+    display: inline-block;
+    vertical-align: middle;
+    border-left: 2px solid #eaeaea;
+  }
 }
 
 .hotel-detail__stars {
+  @include min-desktop-size {
+    margin-bottom: 5px;
+    margin-top: 10px;
+  }
   .star {
     width: 20px;
+    @include min-desktop-size {
+      width: 15px;
+    }
   }
 }
 
@@ -161,20 +231,26 @@
   }
 }
 
-.hotel-detail__prices {
-
-}
-
 .price {
   font-weight: 400;
   font-size: 1em;
+  @include min-desktop-size {
+    text-align: right;
+    padding: 0 20px;
+  }
 }
 .price__label {
   margin-bottom: 5px;
+  @include min-desktop-size {
+    font-size: .75em;
+  }
 }
 .price__value {
   font-weight: 700;
   font-size: 2em;
+  @include min-desktop-size {
+    font-size: 1.8em;
+  }
 }
 
 .price_period .price__value {
