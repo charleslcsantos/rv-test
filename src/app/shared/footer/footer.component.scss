@@ -1,0 +1,28 @@
+@import "../../../assets/scss/variables";
+
+.footer {
+	box-shadow: 0 0 20px -2px #0000003b;
+	position: absolute;
+  width: 100%;
+	background: #FFF;
+	bottom: -320px;
+}
+
+.footer__social-links {
+	padding-top: 20px;
+  text-align: center;
+}
+
+.social-link {
+	width: 35px;
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.footer__copyright {
+	color: #B5B5B5;
+	font-family: $secondary_font;
+	font-size: .8em;
+  text-align: center;
+  padding: 15px 20px;
+}

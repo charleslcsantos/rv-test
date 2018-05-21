@@ -29,4 +29,5 @@ export class HotelService {
         return res['data'];
       })
     );
+  }
 }

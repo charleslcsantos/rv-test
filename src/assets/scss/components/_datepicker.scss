@@ -1,4 +1,5 @@
-ngb-datepicker {  
+ngb-datepicker {
+  color: #444;
   .bg-light {
     background-color: #FFF !important;
   }
@@ -27,7 +28,7 @@ ngb-datepicker {
   }
   .ngb-dp-day, .ngb-dp-weekday {
     width: 35px !important;
-    height: 30px !important;
+    height: 35px !important;
     text-align: center;
     display: flex;
     align-items: center;

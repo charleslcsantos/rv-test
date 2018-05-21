@@ -1,4 +1,45 @@
+@import "../../../assets/scss/variables";
+
+.search-box {
+  background: white;
+  color: #555;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.search-box__title {
+  font-size: 1em;
+  font-weight: 400;
+  text-align: center;
+  font-family: $primary_font;
+  display: block;
+  padding: 20px 20px 10px;
+}
+
+.search-box__dates {
+  font-family: $secondary-font;
+  text-align: center;
+}
+.selected-date {
+  display: inline-block;
+  margin: 0 10px 20px;
+  font-size: .9em;
+  .label {
+    font-weight: 600;
+  }
+  .value {
+    color: #B5B5B5;
+  }
+}
+
+.btn {
+  margin: 0 auto;
+  display: block;
+}
+
 .search-box__pickdate {
+  margin: 20px auto;
   ngb-datepicker {
     background: #FFF;
     border: none;
@@ -8,7 +49,7 @@
     height: 100%;
     width: 100%;
     display: inline-block;
-    line-height: 20px;
+    line-height: 22px;
     &.focused {
       background-color: #79BD1A;
       outline: 0;

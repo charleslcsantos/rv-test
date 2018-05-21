@@ -1,5 +1,5 @@
 <div class="search-box">
-  <h2 class="search-box__title"></h2>
+  <h2 class="search-box__title">Select the dates to stay in Charlotte</h2>
   <div class="col-sm-12 col-md-6">
     <div class="search-box__dates">
       <div class="selected-date">
@@ -25,9 +25,7 @@
               [class.faded]="isHovered(date) || isInside(date)"
               [class.first-range]="isFrom(date)"
               [class.last-range]="isTo(date)"
-              [class.one-selected]="fromDate && !toDate"
-              (mouseenter)="hoveredDate = date"
-              (mouseleave)="hoveredDate = null">
+              [class.one-selected]="fromDate && !toDate">
           {{ date.day }}
         </span>
       </ng-template>

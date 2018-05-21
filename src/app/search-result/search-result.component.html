@@ -6,7 +6,7 @@
         <div class="sidebar__filters">
           <p class="sidebar__title">Filters</p>
           <div class="filter filter__price-range">
-            <nouislider class="range__slider" [connect]="true" [step]="25" [min]="range.min" [max]="range.max" [(ngModel)]="filterRange" (change)="onFilterRangeChange($event)"></nouislider>
+            <nouislider class="range__slider" [connect]="true" [step]="25" [min]="rangeDefault.min" [max]="rangeDefault.max" [(ngModel)]="filterRange" (change)="onFilterRangeChange($event)"></nouislider>
             <span class="range range__from">${{filterRange[0]}}</span>
             <span class="range range__to">${{filterRange[1]}}</span>
           </div>

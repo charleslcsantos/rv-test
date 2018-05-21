@@ -15,7 +15,7 @@ export class SearchResultComponent implements OnInit {
   fromDate: Date;
   totalNights: Observable<number>;
 
-  range = {
+  rangeDefault = {
     min: 0,
     max: 200
   };
@@ -48,9 +48,9 @@ export class SearchResultComponent implements OnInit {
 
   getMinMaxRange() {
     for (const h of this.hotels) {
-      this.range.max = (h.price > this.range.max) ? h.price : this.range.max;
+      this.rangeDefault.max = (h.price > this.rangeDefault.max) ? h.price : this.rangeDefault.max;
     }
-    this.filterRange[1] = this.range.max;
+    this.filterRange[1] = this.rangeDefault.max;
   }
 
   onFilterRangeChange(event) {
@@ -70,8 +70,8 @@ export class SearchResultComponent implements OnInit {
 
   getFilters(): FilterHotelModel {
     const filters: FilterHotelModel = {
-      minPrice: this.filterRange[0] || this.range.min,
-      maxPrice: this.filterRange[1] || this.range.max,
+      minPrice: this.filterRange[0] || this.rangeDefault.min,
+      maxPrice: this.filterRange[1] || this.rangeDefault.max,
       stars: this.filterStars || [1, 2, 3, 4, 5]
     };
     return filters;
