@@ -21,5 +21,8 @@ html {
 body {
 	position: relative;
 	height: 100%;
-	background: #08347d;
+	background: #0f3075;
+	@include min-tablet-size {
+		background: #FFF;
+	}
 }

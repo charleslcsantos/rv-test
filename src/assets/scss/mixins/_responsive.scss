@@ -4,6 +4,12 @@
 	}
 }
 
+@mixin min-desktop-medium-size {
+	@media(min-width: $min_desktop_medium_size) {
+		@content;
+	}
+}
+
 @mixin min-desktop-size {
 	@media(min-width: $min_desktop_size) {
 		@content;

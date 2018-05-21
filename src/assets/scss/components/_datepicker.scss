@@ -34,5 +34,10 @@ ngb-datepicker {
     align-items: center;
     justify-content: center;
     outline: 0;
+    
+    @include min-desktop-size {
+      width: 45px !important;
+      height: 45px !important;
+    }
   }
 }

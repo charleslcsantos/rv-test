@@ -1,11 +1,18 @@
 @import "../../../assets/scss/variables";
+@import "../../../assets/scss/mixins/responsive";
 
 .search-box {
   background: white;
   color: #555;
   border-radius: 10px;
   overflow: hidden;
-  margin-top: 5px;
+  max-width: 450px;
+  text-align: center;
+  margin: 0 auto;
+  @include min-tablet-size {
+    max-width: 750px;
+    box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.55);
+  }
 }
 
 .search-box__title {
@@ -14,19 +21,36 @@
   text-align: center;
   font-family: $primary_font;
   display: block;
-  padding: 20px 20px 10px;
+  padding: 40px 20px 20px;
+  @include min-desktop-size {
+    font-size: 1.3em;
+    padding: 40px 20px;
+  }
 }
 
 .search-box__dates {
   font-family: $secondary-font;
   text-align: center;
+  @include min-desktop-size {
+    padding-top: 20px;
+  }
 }
 .selected-date {
   display: inline-block;
   margin: 0 10px 20px;
   font-size: .9em;
+  @include min-desktop-medium-size {
+    display: block;
+    text-align: left;
+    width: 170px;
+    margin: 20px auto;
+    font-size: 1.2em;
+  }
   .label {
     font-weight: 600;
+    @include min-desktop-size {
+      font-weight: 300;
+    }
   }
   .value {
     color: #B5B5B5;
@@ -40,6 +64,7 @@
 
 .search-box__pickdate {
   margin: 20px auto;
+  font-family: $secondary-font;
   ngb-datepicker {
     background: #FFF;
     border: none;
@@ -49,7 +74,7 @@
     height: 100%;
     width: 100%;
     display: inline-block;
-    line-height: 22px;
+    line-height: 26px;
     &.focused {
       background-color: #79BD1A;
       outline: 0;
