@@ -6,12 +6,14 @@
         <div class="sidebar__filters">
           <p class="sidebar__title">Filters</p>
           <div class="filter filter__price-range">
+            <div class="filter__title">Price range per <strong>night</strong></div>
             <nouislider class="range__slider" [connect]="true" [step]="25" [min]="rangeDefault.min" [max]="rangeDefault.max" [(ngModel)]="filterRange" (change)="onFilterRangeChange($event)"></nouislider>
             <span class="range range__from">${{filterRange[0]}}</span>
             <span class="range range__to">${{filterRange[1]}}</span>
           </div>
           
           <div class="filter filter__stars">
+            <div class="filter__title">Stars</div>
             <div class="stars-{{i}}" *ngFor="let i of [1,2,3,4,5]">
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="{{i}}" id="check_{{i}}" (click)="onFilterStarsChange(i)">

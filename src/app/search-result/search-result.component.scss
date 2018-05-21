@@ -8,6 +8,96 @@
   }
 }
 
+// Sidebar
+
+.sidebar__filters {
+  background: white;
+  padding: 30px;
+  border-radius: 5px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.sidebar__title {
+  font-size: 1.2em;
+  font-weight: 300;
+}
+
+.filter__title {
+  font-size: .8em;
+  color: #B5B5B5;
+  margin-bottom: 15px;
+}
+
+.filter {
+  border-bottom: 1px solid #D8D8D8;
+  padding-bottom: 20px;
+  margin-bottom: 15px;
+  &:last-child {
+    border: none;
+    margin-bottom: 0;
+  }
+}
+
+.filter__stars {
+  .start {
+    width: 25px;
+  }
+}
+
+.range__slider {
+  .noUi-target {
+    background: rgba(0, 0, 0, 0.1);
+    border: none;
+    height: 5px;
+    border-radius: 10px;
+    box-shadow: none;
+  }
+  .noUi-connect {
+    background: $color_orange;
+    border: none;
+    box-shadow: none;
+  }
+  .noUi-handle {
+    background: white;
+    border: 3px solid $color_orange;
+    border-radius: 40px;
+    box-shadow: none;
+    height: 20px;
+    width: 20px;
+    &:after, &:before {
+      display: none;
+    }
+
+  }
+}
+
+.range {
+  color: $color_orange;
+  font-weight: 700;
+  &:before {
+    display: block;
+    font-size: .8em;
+    color: #B5B5B5;
+  }
+}
+
+.range__from {
+  &:before {
+    content: 'Min';
+  }
+}
+
+.range__to {
+  float: right;
+  &:before {
+    content: 'Max';
+  }
+}
+
+
+//Lista de hoteis
+
 .search-result__title {
   font-size: 1.2em;
   text-align: center;
@@ -19,7 +109,7 @@
 }
 
 .filter__stars {
-  
+
 }
 
 .result-list__item {
