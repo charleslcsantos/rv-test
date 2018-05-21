@@ -6,15 +6,15 @@
         <div class="sidebar__filters">
           <p class="sidebar__title">Filters</p>
           <div class="filter filter__price-range">
-            <nouislider class="range__slider" [connect]="true" [step]="100" [min]="0" [max]="1000" [(ngModel)]="filterRange" (ngModelChange)="onPriceRangeChange($event)"></nouislider>
-            <span class="range range__from">{{filterRange}}</span>
-            <span class="range range__to">{{filterRange[0]}}</span>
+            <nouislider class="range__slider" [connect]="true" [step]="100" [min]="0" [max]="1000" [(ngModel)]="filterRange" (change)="filterRange = $event"></nouislider>
+            <span class="range range__from">${{filterRange[0]}}</span>
+            <span class="range range__to">${{filterRange[1]}}</span>
           </div>
           
           <div class="filter filter__stars">
             <div class="stars-{{i}}" *ngFor="let i of [1,2,3,4,5]">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="{{i}}" id="check_{{i}}">
+                <input class="form-check-input" type="checkbox" value="{{i}}" id="check_{{i}}" (click)="onFilterStarsChange()">
                 <label class="form-check-label" for="check_{{i}}">
                   <img class="star" *ngFor="let star of [1,2,3,4,5]" [src]="(star <= i) ? 'assets/images/star-filled.svg' : 'assets/images/star-outline.svg'" alt="{{i}} Stars">
                 </label>

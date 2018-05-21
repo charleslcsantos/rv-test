@@ -21,7 +21,7 @@ export class SearchResultComponent implements OnInit {
     this.fromDate = this.searchHotelService.toJSDate(this.searchHotelService.fromDateSelected);
   }
 
-  onPriceRangeChange(e) {
+  onFilterPriceChange(e) {
     console.log(e);
   }
 
