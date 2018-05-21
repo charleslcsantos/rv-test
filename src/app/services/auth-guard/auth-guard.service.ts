@@ -16,7 +16,7 @@ export class AuthGuard implements CanActivate {
         this.searchHotelService.toDateSelected) {
       return true;
     }
-    return true;
+    return false;
   }
 
 }
