@@ -3,6 +3,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import {NgbDateStruct, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
 import { SearchHotelFormService } from './search-hotel-form.service';
 import { Router } from '@angular/router';
+import { DatesModel } from '../../Models/DatesModel';
 
 const equals = (one: NgbDateStruct, two: NgbDateStruct) =>
   one && two && two.year === one.year && two.month === one.month && two.day === one.day;
@@ -48,6 +49,13 @@ export class SearchHotelFormComponent implements OnInit {
     } else if (this.fromDate && !this.toDate && after(date, this.fromDate)) {
       this.toDate = date;
       this.toDateFormatted = this.searchHotelService.toJSDate(this.toDate);
+
+      const dates: DatesModel = {
+        fromDate: this.fromDate,
+        toDate: this.toDate
+      };
+
+      this.searchHotelService.updateDates(dates);
 
     } else {
       this.toDate = null;
