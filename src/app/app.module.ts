@@ -7,11 +7,16 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MenuComponent } from './shared/menu/menu.component';
+import { SearchHotelFormComponent } from './shared/search-hotel-form/search-hotel-form.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { SearchHotelFormService } from './shared/search-hotel-form/search-hotel-form.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
+    SearchHotelFormComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -19,7 +24,9 @@ import { MenuComponent } from './shared/menu/menu.component';
     NgbModule.forRoot(),
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    SearchHotelFormService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,3 +1,56 @@
-<p>
-  search-result works!
-</p>
+<section class="search-result">
+  <div class="container-fluid">
+    <h2 class="search-result__title">Best choices between {{fromDate | date:'MMM dd, yyyy'}} and {{toDate | date:'MMM dd, yyyy'}}</h2>
+    <div class="row">
+      <div class="search-result__sidebar col-md-3">
+        <div class="sidebar__filters">
+          <p class="sidebar__title">Filters</p>
+          <div class="filter filter__price-range">
+            <nouislider class="range__slider" [connect]="true" [step]="100" [min]="0" [max]="1000" [(ngModel)]="filterRange" (ngModelChange)="onPriceRangeChange($event)"></nouislider>
+            <span class="range range__from">{{filterRange}}</span>
+            <span class="range range__to">{{filterRange[0]}}</span>
+          </div>
+          
+          <div class="filter filter__stars">
+            <div class="stars-{{i}}" *ngFor="let i of [1,2,3,4,5]">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="{{i}}" id="check_{{i}}">
+                <label class="form-check-label" for="check_{{i}}">
+                  <img class="star" *ngFor="let star of [1,2,3,4,5]" [src]="(star <= i) ? 'assets/images/star-filled.svg' : 'assets/images/star-outline.svg'" alt="{{i}} Stars">
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="search-result__list col-sm-12 col-md-9">
+        <a href="javascript:;" class="result-list__item">
+          <div class="card-hotel">
+            <div class="hotel-detail">
+              <div class="hotel-detail__pic"></div>
+              <div class="hotel-detail__main">
+                <div class="hotel-detail__starts"></div>
+                <div class="hotel-detail__title"></div>
+                <div class="hotel-detail__description"></div>
+                <div class="hotel-detail__actions">
+                  <button class="btn btn-outline-warning">Book now</button>
+                  <button class="btn btn-outline-primary">Price history</button>
+                </div>
+              </div>
+              <div class="hotel-detail__prices">
+                <div class="price price_period">
+                  <p>Total <strong>8 nights</strong></p>
+                  <p class="price__value">$ 670</p>
+                </div>
+              </div>
+            </div>
+            <div class="hotel-price-history">
+              <p>Per night</p>
+              <p class="price__value">$ 670</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>    
+  </div>
+</section>
