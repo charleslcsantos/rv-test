@@ -2,7 +2,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { SearchHotelFormService } from '../shared/search-hotel-form/search-hotel-form.service';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { HotelService } from '../services/hotel/hotel.service';
-import { HotelModel } from '../Models/HoteModel';
+import { HotelModel, FilterHotelModel } from '../Models/HotelModel';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -14,7 +14,13 @@ export class SearchResultComponent implements OnInit {
   toDate: Date;
   fromDate: Date;
   totalNights: Observable<number>;
-  filterRange = [0, 1000];
+
+  range = {
+    min: 0,
+    max: 200
+  };
+  filterRange = [0, 200];
+  filterStars = [];
 
   hotels: HotelModel[];
 
@@ -31,15 +37,44 @@ export class SearchResultComponent implements OnInit {
     this.getHotels();
   }
 
-  getHotels() {
-    this.hotelService.getAll().subscribe((res: HotelModel[]) => {
+  getHotels(filters?: FilterHotelModel) {
+    this.hotelService.getAll(filters).subscribe((res: HotelModel[]) => {
       this.hotels = res;
-      console.log(res[0]);
+      if (!filters) {
+        this.getMinMaxRange();
+      }
     });
   }
 
+  getMinMaxRange() {
+    for (const h of this.hotels) {
+      this.range.max = (h.price > this.range.max) ? h.price : this.range.max;
+    }
+    this.filterRange[1] = this.range.max;
+  }
+
+  onFilterRangeChange(event) {
+    this.filterRange = event;
+    this.getHotels(this.getFilters());
+  }
+
   onFilterStarsChange(e) {
-    console.log(e);
+    if (this.filterStars.indexOf(e) === -1) {
+      this.filterStars.push(e);
+    } else {
+      this.filterStars.splice(this.filterStars.indexOf(e), 1);
+    }
+
+    this.getHotels(this.getFilters());
+  }
+
+  getFilters(): FilterHotelModel {
+    const filters: FilterHotelModel = {
+      minPrice: this.filterRange[0] || this.range.min,
+      maxPrice: this.filterRange[1] || this.range.max,
+      stars: this.filterStars || [1, 2, 3, 4, 5]
+    };
+    return filters;
   }
 
 }

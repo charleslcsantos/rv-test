@@ -6,7 +6,7 @@
         <div class="sidebar__filters">
           <p class="sidebar__title">Filters</p>
           <div class="filter filter__price-range">
-            <nouislider class="range__slider" [connect]="true" [step]="100" [min]="0" [max]="1000" [(ngModel)]="filterRange" (change)="filterRange = $event"></nouislider>
+            <nouislider class="range__slider" [connect]="true" [step]="25" [min]="range.min" [max]="range.max" [(ngModel)]="filterRange" (change)="onFilterRangeChange($event)"></nouislider>
             <span class="range range__from">${{filterRange[0]}}</span>
             <span class="range range__to">${{filterRange[1]}}</span>
           </div>
@@ -14,7 +14,7 @@
           <div class="filter filter__stars">
             <div class="stars-{{i}}" *ngFor="let i of [1,2,3,4,5]">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="{{i}}" id="check_{{i}}" (click)="onFilterStarsChange($event.target.checked)">
+                <input class="form-check-input" type="checkbox" value="{{i}}" id="check_{{i}}" (click)="onFilterStarsChange(i)">
                 <label class="form-check-label" for="check_{{i}}">
                   <app-stars [qtd]=5 [qtdFilled]="i" ></app-stars>
                 </label>

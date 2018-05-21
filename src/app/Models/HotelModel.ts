@@ -10,3 +10,8 @@ export interface PriceHistoryModel {
   month: string;
   value: number;
 }
+export interface FilterHotelModel {
+  minPrice;
+  maxPrice;
+  stars;
+}
