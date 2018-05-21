@@ -10,6 +10,7 @@ import { MenuComponent } from './shared/menu/menu.component';
 import { SearchHotelFormComponent } from './shared/search-hotel-form/search-hotel-form.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { SearchHotelFormService } from './shared/search-hotel-form/search-hotel-form.service';
+import { LoaderComponent } from './shared/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { SearchHotelFormService } from './shared/search-hotel-form/search-hotel-
     MenuComponent,
     SearchHotelFormComponent,
     FooterComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,

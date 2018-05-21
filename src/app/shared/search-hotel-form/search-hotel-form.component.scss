@@ -11,7 +11,7 @@
   margin: 0 auto;
   @include min-tablet-size {
     max-width: 750px;
-    box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.55);
+    box-shadow: 0 -10px 30px -5px rgba(0, 0, 0, 0.55);
   }
 }
 
@@ -33,6 +33,7 @@
   text-align: center;
   @include min-desktop-size {
     padding-top: 20px;
+    padding-left: 30px;
   }
 }
 .selected-date {
@@ -54,6 +55,9 @@
   }
   .value {
     color: #B5B5B5;
+    @include min-desktop-size {
+      font-size: .9em;
+    }
   }
 }
 
@@ -75,6 +79,10 @@
     width: 100%;
     display: inline-block;
     line-height: 26px;
+    @include min-desktop-size {
+      line-height: 37px;
+      font-size: .8em;
+    }
     &.focused {
       background-color: #79BD1A;
       outline: 0;
@@ -86,10 +94,18 @@
     &.first-range {
       border-top-left-radius: 20px;
       border-bottom-left-radius: 20px;
+      @include min-desktop-size {
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+      }
     }
     &.last-range {
       border-top-right-radius: 20px;
       border-bottom-right-radius: 20px;
+      @include min-desktop-size {
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+      }
     }
     &.faded {
       background-color: #79BD1A;

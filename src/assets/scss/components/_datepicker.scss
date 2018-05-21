@@ -1,3 +1,6 @@
+@import "../variables";
+@import "../mixins/responsive";
+
 ngb-datepicker {
   color: #444;
   .bg-light {

@@ -1,8 +1,9 @@
-<div class="home-bg"></div>
+<app-loader *ngIf="showLoader"></app-loader>
 <header class="container-fluid">
   <app-menu></app-menu>
 </header>
 <section class="section-home">
+  <div class="home-bg"></div>
   <div class="container-fluid">
     <div class="highlight">
       <img src="assets/images/crown.svg" alt="" class="highlight__crown">

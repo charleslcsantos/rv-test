@@ -1,10 +1,96 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins/responsive";
+
+.search-result {
+  color: #FFF;
+  @include min-tablet-size {
+    color: #555;
+  }
+}
+
 .search-result__title {
   font-size: 1.2em;
   text-align: center;
   margin: 20px 0;
   font-weight: 500;
+  font-family: $primary_font;
+  letter-spacing: 2px;
+
 }
 
 .filter__stars {
   
+}
+
+.result-list__item {
+  color: #B5B5B5;
+  line-height: 1.6em;
+}
+
+.card-hotel {
+  width: 100%;
+  background: #FFF;
+  border-radius: 10px;
+  text-align: center;
+  overflow: hidden;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+}
+
+.hotel-detail__pic {
+  width: 100%;
+  max-height: 280px;
+}
+
+.hotel-detail__title {
+  color: $color_orange;
+  font-family: $secondary_font;
+  font-weight: 900;
+  margin-bottom: 15px;
+  font-size: 1.3em;
+}
+
+.hotel-detail__main {
+  padding: 20px 15px;
+}
+
+.hotel-detail__stars {
+  .star {
+    width: 20px;
+  }
+}
+
+.hotel-detail__actions {
+  margin: 10px auto;
+  .btn {
+    display: inline-block;
+    margin-right: 10px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.hotel-detail__prices {
+
+}
+
+.price {
+  font-weight: 400;
+  font-size: 1em;
+}
+.price__label {
+  margin-bottom: 5px;
+}
+.price__value {
+  font-weight: 700;
+  font-size: 2em;
+}
+
+.price_period .price__value {
+  color: $color_green;
+}
+
+.hotel-price-history .price__value {
+  color: $color_orange;
 }

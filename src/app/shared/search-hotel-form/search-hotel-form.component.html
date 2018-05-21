@@ -12,7 +12,7 @@
           <div class="value">{{ (toDateFormatted | date:'MMM dd, yyyy') || 'Choose a date' }}</div>
         </div>
       </div>
-      <button class="btn btn-outline-primary" (click)="search()">Search hotels</button>
+      <button class="btn btn-outline-primary" (click)="search()" [disabled]="!toDate">Search hotels</button>
     </div>
     <div class="col-sm-12 col-lg-6">
       <div class="search-box__pickdate">

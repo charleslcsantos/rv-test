@@ -4,11 +4,12 @@
   border-radius: 50px;
   font-size: .9em;
   padding: 8px 20px;
-  &.btn-outline-primary {
+  font-size: .8em;
+  padding: 8px 25px;
+  font-weight: 600;
+  &.btn-outline-primary{
     color: $color_orange;
     border-color: $color_orange;
-    font-size: .8em;
-    padding: 8px 25px;
     &:hover, &:focus, &:not(:disabled):not(.disabled):active {
       color: #fff;
       background-color: $color_orange;
@@ -16,9 +17,9 @@
       box-shadow: none;
     }
   }
-}
-
-.btn-sm {
-  padding: 5px 15px;
-  font-size: .7em;
+  &.btn-outline-secondary {
+    color: #fff;
+    background-color: $color_green;
+    border-color: $color_green;
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-stars',
@@ -12,7 +12,8 @@ import { Component, OnInit, Input } from '@angular/core';
               margin-left: 5px;
               margin-bottom: 15px;
             }
-          `]
+  `],
+  encapsulation: ViewEncapsulation.None,
 })
 export class StarsComponent implements OnInit {
   @Input() qtd: number;

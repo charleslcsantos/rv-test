@@ -1,14 +1,17 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewEncapsulation } from '@angular/core';
 import { SearchHotelFormService } from '../shared/search-hotel-form/search-hotel-form.service';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { HotelService } from '../services/hotel/hotel.service';
 import { HotelModel, FilterHotelModel } from '../Models/HotelModel';
 import { Observable } from 'rxjs';
+import { LoaderService } from '../services/Loader/loader.service';
+import { DatesModel } from '../Models/DatesModel';
 
 @Component({
   selector: 'app-search-result',
   templateUrl: './search-result.component.html',
   styleUrls: ['./search-result.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class SearchResultComponent implements OnInit {
   toDate: Date;
@@ -26,8 +29,11 @@ export class SearchResultComponent implements OnInit {
 
   constructor(
     private searchHotelService: SearchHotelFormService,
-    private hotelService: HotelService
-  ) { }
+    private hotelService: HotelService,
+    private loaderService: LoaderService
+  ) {
+    this.loaderService.showLoader();
+  }
 
   ngOnInit() {
     this.toDate = this.searchHotelService.toJSDate(this.searchHotelService.toDateSelected);
@@ -43,6 +49,7 @@ export class SearchResultComponent implements OnInit {
       if (!filters) {
         this.getMinMaxRange();
       }
+      setTimeout(() => this.loaderService.showLoader(false), 2000);
     });
   }
 
