@@ -16,7 +16,7 @@ import { DatesModel } from '../Models/DatesModel';
 export class SearchResultComponent implements OnInit {
   toDate: Date;
   fromDate: Date;
-  totalNights: Observable<number>;
+  totalNights: number;
 
   rangeDefault = {
     min: 0,
@@ -33,12 +33,12 @@ export class SearchResultComponent implements OnInit {
     private loaderService: LoaderService
   ) {
     this.loaderService.showLoader();
+    this.searchHotelService.totalNights.subscribe(nights => this.totalNights = nights);
   }
 
   ngOnInit() {
     this.toDate = this.searchHotelService.toJSDate(this.searchHotelService.toDateSelected);
     this.fromDate = this.searchHotelService.toJSDate(this.searchHotelService.fromDateSelected);
-    this.totalNights = this.searchHotelService.totalNights;
 
     this.getHotels();
   }

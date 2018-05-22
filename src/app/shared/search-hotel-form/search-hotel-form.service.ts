@@ -15,7 +15,9 @@ export class SearchHotelFormService {
   private _fromDateSelected: NgbDateStruct = null;
   private _totalNights = 0;
 
-  constructor() { }
+  constructor() {
+    //this.dates$.subscribe()
+  }
 
   set toDateSelected(d: NgbDateStruct) {
     this._toDateSelected = d;
@@ -43,7 +45,15 @@ export class SearchHotelFormService {
     );
   }
 
-  updateDates(dates: DatesModel) {
+  updateDates(dates?: DatesModel) {
+    if (!dates) {
+      dates = {
+        fromDate: this.toDateSelected,
+        toDate: this.fromDateSelected
+      };
+    }
+    console.log('mandei salvar');
+    console.log(dates);
     this.datesSource.next(dates);
   }
 

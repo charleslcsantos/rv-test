@@ -73,15 +73,7 @@ export class SearchHotelFormComponent implements OnInit {
   search() {
     this.searchHotelService.fromDateSelected = this.fromDate;
     this.searchHotelService.toDateSelected = this.toDate;
-
-    this.searchHotelService.updateDates(
-      {
-        fromDate: this.fromDate,
-        toDate: this.toDate
-      }
-    );
-
-    this.router.navigate(['search']);
+    this.router.navigate(['search']).then(r => this.searchHotelService.updateDates());
   }
 
 }

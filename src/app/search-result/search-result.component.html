@@ -1,5 +1,5 @@
 <section class="search-result">
-  <div class="container-fluid">
+  <div class="container">
     <h2 class="search-result__title">Best choices between {{fromDate | date:'MMM dd, yyyy'}} and {{toDate | date:'MMM dd, yyyy'}}</h2>
     <div class="row">
       <div class="search-result__sidebar col-xs-12 col-md-3 col-lg-3">
@@ -43,8 +43,8 @@
               </div>
               <div class="hotel-detail__prices">
                 <div class="price price_period">
-                  <p class="price__label">Total<strong> {{ (totalNights | async) }} {{ (totalNights | async) > 1 ? 'nights' : 'night' }}</strong></p>
-                  <p class="price__value">$ {{ (hotel.price * (totalNights | async)) }}</p>
+                  <p class="price__label">Total<strong> {{ totalNights }} {{ totalNights > 1 ? 'nights' : 'night' }}</strong></p>
+                  <p class="price__value">$ {{ (hotel.price * totalNights) }}</p>
                 </div>
                 <div class="price price_night">
                   <p class="price__label">Per night</p>
