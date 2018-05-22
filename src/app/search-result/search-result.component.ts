@@ -44,12 +44,13 @@ export class SearchResultComponent implements OnInit {
   }
 
   getHotels(filters?: FilterHotelModel) {
+    this.loaderService.showLoader();
     this.hotelService.getAll(filters).subscribe((res: HotelModel[]) => {
       this.hotels = res;
       if (!filters) {
         this.getMinMaxRange();
       }
-      setTimeout(() => this.loaderService.showLoader(false), 2000);
+      setTimeout(() => this.loaderService.showLoader(false), 1500);
     });
   }
 
