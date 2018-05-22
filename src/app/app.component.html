@@ -1,6 +1,6 @@
-<app-loader *ngIf="showLoader"></app-loader>
+<div app-loader *ngIf="showLoader"></div>
 <header class="container-fluid">
-  <app-menu></app-menu>
+  <div app-menu></div>
 </header>
 <section class="section-home">
   <div class="home-bg"></div>
@@ -11,10 +11,10 @@
         Welcome to <strong class="highlight__title-featured">Charlotte</strong> the queen city
       </h1>
     </div>
-    <app-search-hotel-form></app-search-hotel-form>
+    <div app-search-hotel-form></div>
   </div>
 </section>
 
 <router-outlet></router-outlet>
 
-<app-footer></app-footer>
+<div app-footer></div app-footer>
