@@ -2,7 +2,7 @@
   <div class="container">
     <h2 class="search-result__title">Best choices between {{fromDate | date:'MMM dd, yyyy'}} and {{toDate | date:'MMM dd, yyyy'}}</h2>
     <div class="row">
-      <div class="search-result__sidebar col-xs-12 col-md-3 col-lg-3">
+      <div class="search-result__sidebar col-xs-12 col-md-12 col-lg-3">
         <div class="sidebar__filters">
           <p class="sidebar__title">Filters</p>
           <div class="filter filter__price-range">
@@ -25,9 +25,11 @@
           </div>
         </div>
       </div>
-      <div class="search-result__list col-sm-12 col-md-9 col-lg-9">
+      <div class="search-result__list col-sm-12 col-md-12 col-lg-9">
         <a href="javascript:;" class="result-list__item" *ngFor="let hotel of hotels">
-          <div class="card-hotel">
+          <div class="card-hotel"
+              [class.show-price-history]="hotel.showPriceHistory"
+          >
             <div class="hotel-detail">
               <img class="hotel-detail__pic" src="{{ hotel.image }}" alt="{{ hotel.name }}">
               <div class="hotel-detail__main">
@@ -38,7 +40,7 @@
                 <div class="hotel-detail__description">{{ hotel.description }}</div>
                 <div class="hotel-detail__actions">
                   <button class="btn btn-outline-primary">Book now</button>
-                  <button class="btn btn-outline-secondary">Price history</button>
+                  <button class="btn btn-outline-secondary" (click)="hotel.showPriceHistory = true;">Price history</button>
                 </div>
               </div>
               <div class="hotel-detail__prices">
@@ -48,7 +50,7 @@
                 </div>
                 <div class="price price_night">
                   <p class="price__label">Per night</p>
-                  <p class="price__value">$ {{ hotel.price }}</p>
+                  <p class="price__value">$ {{ hotel.price.toFixed(2) }}</p>
                 </div>
               </div>
             </div>

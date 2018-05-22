@@ -22,7 +22,7 @@ export class SearchResultComponent implements OnInit {
     min: 0,
     max: 200
   };
-  filterRange = [0, 200];
+  filterRange = [0, 0];
   filterStars = [];
 
   hotels: HotelModel[];

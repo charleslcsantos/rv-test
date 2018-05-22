@@ -52,8 +52,6 @@ export class SearchHotelFormService {
         toDate: this.fromDateSelected
       };
     }
-    console.log('mandei salvar');
-    console.log(dates);
     this.datesSource.next(dates);
   }
 
