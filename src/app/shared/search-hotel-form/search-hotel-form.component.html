@@ -20,15 +20,16 @@
         </ngb-datepicker>
         
         <ng-template #t let-date="date" let-focused="focused">
-          <span class="custom-day"
-                [class.focused]="focused"
-                [class.range]="isFrom(date) || isTo(date) || isInside(date) || isHovered(date)"
-                [class.faded]="isHovered(date) || isInside(date)"
-                [class.first-range]="isFrom(date)"
-                [class.last-range]="isTo(date)"
-                [class.one-selected]="fromDate && !toDate">
-            {{ date.day }}
-          </span>
+          <div class="custom-date"
+              [class.range]="isFrom(date) || isTo(date) || isInside(date) || isHovered(date)"
+              [class.faded]="isHovered(date) || isInside(date)"
+              [class.first-range]="isFrom(date)"
+              [class.last-range]="isTo(date)"
+              [class.one-selected]="fromDate && !toDate" >
+            <span class="day">
+              {{ date.day }}
+            </span>
+          </div>
         </ng-template>
       </div>
     </div>

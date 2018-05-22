@@ -27,9 +27,7 @@
       </div>
       <div class="search-result__list col-sm-12 col-md-12 col-lg-9">
         <a href="javascript:;" class="result-list__item" *ngFor="let hotel of hotels">
-          <div class="card-hotel"
-              [class.show-price-history]="hotel.showPriceHistory"
-          >
+          <div class="card-hotel">
             <div class="hotel-detail">
               <img class="hotel-detail__pic" src="{{ hotel.image }}" alt="{{ hotel.name }}">
               <div class="hotel-detail__main">
@@ -40,7 +38,7 @@
                 <div class="hotel-detail__description">{{ hotel.description }}</div>
                 <div class="hotel-detail__actions">
                   <button class="btn btn-outline-primary">Book now</button>
-                  <button class="btn btn-outline-secondary" (click)="hotel.showPriceHistory = true;">Price history</button>
+                  <button class="btn btn-outline-secondary">Price history</button>
                 </div>
               </div>
               <div class="hotel-detail__prices">
@@ -55,7 +53,15 @@
               </div>
             </div>
             <div class="hotel-price-history">
-              
+              <div class="price-history__title">
+                Price history for 2017
+              </div>
+              <div class="price-history__back">
+                <button class="btn btn-back" (click)="hotel.showPriceHistory = false;">Back to description</button>
+              </div>
+              <div class="price-history__chart">
+
+              </div>
             </div>
           </div>
         </a>
