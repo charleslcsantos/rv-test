@@ -18,7 +18,7 @@ const after = (one: NgbDateStruct, two: NgbDateStruct) =>
 
 
 @Component({
-  selector: '[app-search-hotel-form]',
+  selector: 'app-search-hotel-form',
   templateUrl: './search-hotel-form.component.html',
   styleUrls: ['./search-hotel-form.component.scss'],
   encapsulation: ViewEncapsulation.None,
