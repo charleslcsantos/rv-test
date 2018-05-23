@@ -26,7 +26,7 @@
         </div>
       </div>
       <div class="search-result__list col-sm-12 col-md-12 col-lg-9">
-        <p class="search-result__title" *ngIf="hotels.length < 1">:( Sorry, we haven't hotels for this filters</p>
+        <p class="search-result__title" *ngIf="hotels?.length < 1">:( Sorry, we haven't hotels for this filters</p>
         <a href="javascript:;" class="result-list__item" *ngFor="let hotel of hotels">
           <div class="card-hotel">
             <div class="hotel-detail">
